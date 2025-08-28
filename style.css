@@ -1,0 +1,448 @@
+/* ESTILOS PROPORCIONADOS POR EL USUARIO */
+body {
+    background-color: skyblue;
+    text-align: center;
+    margin: 0px;
+}
+.contenedor {
+  text-align: center;  
+  flex-direction: column;
+  align-items: center; 
+}
+
+.audio-player {
+  margin-bottom: 15px;  
+}
+
+audio {
+  display: block;
+  margin: 0 auto;      
+}
+
+.left {
+    width: 80px;
+    height: 110px;
+    display: block;
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    transform: rotate(-50deg);
+    left: 60px;
+    position: absolute;
+    align-content: center;
+}
+.imagen-container {
+    width: 150px;   /* aquí decides el tamaño */
+    height: auto;
+    margin: 5px auto; /* centrado */
+}
+
+.imagen-container img {
+    width: 100%;
+    height: auto;
+}
+
+.birthday-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+} 
+
+.prueba {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; 
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap; 
+    margin-top: 10px;
+    width: 80px;
+}
+
+.heart {
+    position: absolute;
+    transform: rotate(-45deg);
+    background: #e74c3c;
+    z-index: 1;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: floatHeart 12s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #e74c3c;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    right: -50%;
+}
+
+/* ESTILOS DE LA PÁGINA DE CUMPLEAÑOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #0c0c0c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #992e2e;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+/* Reproductor minimalista */
+
+.music-player {
+    position: relative;         /* ya no fijo */
+    margin: 0 auto 25px;        /* centrado y con espacio debajo */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* centra internamente */
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: fit-content;         /* el ancho se ajusta al contenido */
+}
+
+.music-player:hover {
+    transform: translateY(-5px);
+}
+
+
+.music-player:hover {
+    transform: translateY(-5px);
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(110, 142, 251, 0.4);
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.song-info {
+    font-size: 14px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.volume-slider {
+    width: 70px;
+    -webkit-appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Decoraciones */
+.decoration {
+    position: absolute;
+    z-index: 1;
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatParticle 15s infinite linear;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.balloon {
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    animation: floatBalloon 15s infinite ease-in-out;
+}
+
+.balloon1 {
+    background: #ff5e7d;
+    top: 5%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.balloon2 {
+    background: #6e8efb;
+    top: 8%;
+    right: 8%;
+    animation: float 10s ease-in-out infinite;
+}
+
+.balloon3 {
+    background: #ff9500;
+    bottom: 20%;
+    left: 15%;
+    animation: float 9s ease-in-out infinite;
+}
+
+.confetti {
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    opacity: 0.7;
+}
+
+@keyframes floatBalloon {
+    0%, 100% { 
+        transform: translateY(0) translateX(0) rotate(0deg); 
+    }
+    25% { 
+        transform: translateY(-30px) translateX(10px) rotate(3deg); 
+    }
+    50% { 
+        transform: translateY(-60px) translateX(-5px) rotate(-2deg); 
+    }
+    75% { 
+        transform: translateY(-40px) translateX(-8px) rotate(2deg); 
+    }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(5deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px) rotate(10deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(-20px) translateX(-15px) rotate(5deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.5;
+    }
+}
+
+@keyframes floatHeart {
+    0%, 100% { 
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: translateY(-25px) translateX(8px) rotate(10deg);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-45px) translateX(-8px) rotate(-5deg);
+        opacity: 0.6;
+    }
+    75% { 
+        transform: translateY(-30px) translateX(5px) rotate(8deg);
+        opacity: 0.8;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Corazones personalizados */
+.custom-heart {
+    position: absolute;
+    transform: rotate(-45deg);
+    background: #e74c3c;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.custom-heart::before,
+.custom-heart::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #e74c3c;
+    border-radius: 50%;
+}
+
+.custom-heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.custom-heart::after {
+    top: 0;
+    right: -50%;
+}
+
+.hearts-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .subtitle { font-size: 1.2rem; }
+    .message { font-size: 1rem; padding: 15px; }
+    .container { padding: 20px; }
+    .music-player { bottom: 15px; right: 15px; }
+    .birthday-image { max-width: 350px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    .subtitle { font-size: 1rem; }
+    .message { font-size: 0.9rem; padding: 12px; }
+    .music-player { padding: 8px 12px; }
+    .song-info { display: none; }
+    .volume-slider { width: 40px; }
+    .container { margin-top: 60px; }
+    .birthday-image { max-width: 280px; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.twinkle {
+    animation: twinkle 3s infinite ease-in-out;
+}
